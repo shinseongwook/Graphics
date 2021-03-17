@@ -127,6 +127,7 @@ void Graphic::Initialize()
 	camera.Front = glm::vec3(0, 0, 1.f);
 	camera.WorldUp = glm::vec3(0, 1, 0.f);
 	camera.Pitch = 0.f;
+	camera.Yaw = 90.f;
 	camera.updateCameraVectors();
 
 }

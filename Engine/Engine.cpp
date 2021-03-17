@@ -513,6 +513,22 @@ void Engine::MainLoop()
 		ImGui_ImplGlfwGL3_RenderDrawData(ImGui::GetDrawData());
 
 		glfwSwapBuffers(APP->Get_Window());
+		if (Input::Is_Pressed(GLFW_KEY_A))
+		{
+			graphic->camera.ProcessMouseMovement(-100.0f, 0);
+		}
+		if (Input::Is_Pressed(GLFW_KEY_D))
+		{
+			graphic->camera.ProcessMouseMovement(100.0f, 0);
+		}
+		if (Input::Is_Pressed(GLFW_KEY_W))
+		{
+			graphic->camera.ProcessKeyboard(Camera_Movement::BACKWARD, 0.016f);
+		}
+		if (Input::Is_Pressed(GLFW_KEY_S))
+		{
+			graphic->camera.ProcessKeyboard(Camera_Movement::FORWARD, 0.016f);
+		}
 	}
 }
 
